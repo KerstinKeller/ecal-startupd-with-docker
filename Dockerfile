@@ -3,7 +3,7 @@
 FROM ubuntu:focal
 
 # install prerequisites    
-RUN apt-get install -y git python3-pip curl libqt5multimedia5-plugins software-properties-common && \
+RUN apt-get install -y git python3-pip curl libqt5multimedia5-plugins software-properties-common
 
 # install eCAL
 RUN add-apt-repository -y ppa:ecal/ecal-5.11 && \
