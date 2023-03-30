@@ -3,15 +3,12 @@
 FROM ubuntu:focal
 
 # install prerequisites    
-RUN apt-get update && \
-    apt-get install -y git python3-pip curl libqt5multimedia5-plugins software-properties-common && \
-    apt-get update
+RUN apt-get install -y git python3-pip curl libqt5multimedia5-plugins software-properties-common && \
 
 # install eCAL
-RUN add-apt-repository ppa:ecal/ecal-5.11 && \
-    apt-get install -y ecal && \
-    apt-get update 
-
+RUN add-apt-repository -y ppa:ecal/ecal-5.11 && \
+    apt-get install -y ecal
+    
 WORKDIR /app/ecal-camera-samples    
 RUN curl -LJO https://github.com/eclipse-ecal/ecal-camera-samples/releases/download/v1.0.0/ecal-camera-samples-ubuntu-20.04-ecal-5.11.deb -o  ecal-camera-samples-ubuntu-20.04-ecal-5.11.deb && \
     dpkg -i ecal-camera-samples*.deb 
