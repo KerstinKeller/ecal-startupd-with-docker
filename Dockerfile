@@ -1,6 +1,7 @@
 # this is a dockerfile to package eCAL and some applications
 
 FROM ubuntu:focal
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get upgrade -y
 # install prerequisites    
