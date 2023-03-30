@@ -2,6 +2,7 @@
 
 FROM ubuntu:focal
 
+RUN apt-get update && apt-get upgrade -y
 # install prerequisites    
 RUN apt-get install -y git python3-pip curl libqt5multimedia5-plugins software-properties-common
 
