@@ -18,9 +18,8 @@ RUN curl -LJO https://github.com/eclipse-ecal/ecal-camera-samples/releases/downl
 # install the eCAL camera sample
 WORKDIR /app/ecal-foxglove-bridge  
 RUN git clone https://github.com/eclipse-ecal/ecal-foxglove-bridge.git /app/ecal-foxglove-bridge && \
-    curl -LJO https://github.com/eclipse-ecal/ecal/releases/download/v5.11.3/ecal5-5.11.3-1focal-cp38-cp38-linux_x86_64.whl -o ecal.whl && \
+    curl -LJO https://github.com/eclipse-ecal/ecal/releases/download/v5.11.3/ecal5-5.11.3-1focal-cp38-cp38-linux_x86_64.whl -o ecal5-5.11.3-1focal-cp38-cp38-linux_x86_64.whl && \
     pip install -r python/requirements.txt && \
-    pip install ./ecal.whl
+    pip install ./ecal5-5.11.3-1focal-cp38-cp38-linux_x86_64.whl
  
 CMD ["python3", "/app/ecal-foxglove-bridge/python/ecal-foxglove-bridge.py"]
-CMD ["ecal_sample_person_snd"]
